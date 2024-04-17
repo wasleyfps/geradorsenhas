@@ -5,17 +5,27 @@
     <input type="number" id="length" v-model="passwordLength" min="4" max="32">
     <br>
 
-    <label for="includeUppercase">Incluir Letras Maiúsculas: </label>
-    <input type="checkbox" id="includeUppercase" v-model="includeUppercase">
-    <br>
-    
-    <label for="includeNumbers">Incluir Números: </label>
-    <input type="checkbox" id="includeNumbers" v-model="includeNumbers">
-    <br>
-    
-    <label for="includeSymbols">Incluir Símbolos: </label>
-    <input type="checkbox" id="includeSymbols" v-model="includeSymbols">
-    <br>
+    <div class="container">
+      <div class="checkboxs">
+        <label for="includeUppercase"> Letras Maiúsculas: </label>
+        <input type="checkbox" id="includeUppercase" v-model="includeUppercase">
+      </div>
+  
+      <div class="checkboxs">
+        <label for="includeNumbers">Números: </label>
+        <input type="checkbox" id="includeNumbers" v-model="includeNumbers">
+      </div>
+      
+      <div class="checkboxs">
+        <label for="includeSymbols">Símbolos: </label>
+        <input type="checkbox" id="includeSymbols" v-model="includeSymbols">
+      </div>
+
+
+
+    </div>
+
+
     <button @click="generatePassword" class="generatedPassword-button">Gerar Senha</button>
 
     <div v-if="generatePassword" class="generated-password">
@@ -69,6 +79,7 @@ input {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
+  
 }
 
 .generate-button {
@@ -100,4 +111,11 @@ input {
   background-color: #f9f9f9;
   color: #333;
 }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
 </style>
